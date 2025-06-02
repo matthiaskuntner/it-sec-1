@@ -9,7 +9,7 @@ if ( isset($_POST['item'])) {
     
     // Check if the file exists and redirect to it
     if (!empty($input_value)) {
-        $file_path = "products/" . $input_value . ".html";
+        $file_path = "products/" . basename( $input_value) . ".html";
         if (file_exists($file_path)) {
             echo file_get_contents($file_path);
         } else {
